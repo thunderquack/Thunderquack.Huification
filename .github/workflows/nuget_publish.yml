@@ -2,8 +2,10 @@ name: Nuget Component Publish
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+    - master
+    #tags:
+    #  - '*'
 
 jobs:
   update-nuget-config:
@@ -21,3 +23,6 @@ jobs:
         versionSpec: '5.x'
     - name: Determine Version
       uses: gittools/actions/gitversion/execute@v0
+      with:
+        useConfigFile: true
+        additionalArguments: '/showConfig'
