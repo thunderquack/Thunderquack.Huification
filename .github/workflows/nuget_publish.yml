@@ -1,0 +1,23 @@
+name: Nuget Component Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update-nuget-config:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0
+      with:
+        versionSpec: '5.x'
+    - name: Determine Version
+      uses: gittools/actions/gitversion/execute@v0
