@@ -1,5 +1,4 @@
-﻿next-version: 1.0.0
-assembly-versioning-scheme: MajorMinorPatchTag
+﻿assembly-versioning-scheme: MajorMinorPatchTag
 assembly-file-versioning-scheme: MajorMinorPatchTag
 mode: Mainline
 tag-prefix: ''
