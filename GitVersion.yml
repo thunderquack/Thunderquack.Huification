@@ -1,4 +1,2 @@
-﻿assembly-versioning-scheme: MajorMinorPatchTag
-assembly-file-versioning-scheme: MajorMinorPatchTag
-mode: Mainline
-tag-prefix: ''
+﻿mode: Mainline
+branches: {}
