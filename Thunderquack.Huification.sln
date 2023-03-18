@@ -5,14 +5,15 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thunderquack.Huification", "Thunderquack.Huification\Thunderquack.Huification.csproj", "{177E284A-AB3A-490C-83FE-770748779618}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunderquack.Huification.Tests", "Thunderquack.Huification.Tests\Thunderquack.Huification.Tests.csproj", "{F3A15665-FDD7-4D0B-87C1-42D9D0F9931D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thunderquack.Huification.Tests", "Thunderquack.Huification.Tests\Thunderquack.Huification.Tests.csproj", "{F3A15665-FDD7-4D0B-87C1-42D9D0F9931D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunderquack.Huification.Sample", "Thunderquack.Huification.Sample\Thunderquack.Huification.Sample.csproj", "{D8EF7314-C3ED-458D-805C-DD7FDF46AC13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thunderquack.Huification.Sample", "Thunderquack.Huification.Sample\Thunderquack.Huification.Sample.csproj", "{D8EF7314-C3ED-458D-805C-DD7FDF46AC13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C42E09A-61F4-4861-BC5B-631C807C0830}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		LICENSE = LICENSE
+		GitVersion.yml = GitVersion.yml
 		.github\workflows\nuget_publish.yml = .github\workflows\nuget_publish.yml
 		README.md = README.md
 	EndProjectSection
