@@ -2,10 +2,10 @@ name: Nuget Component Publish
 
 on:
   push:
-    branches:
-    - master
-    #tags:
-    #  - '*'
+    #branches:
+    #- master
+    tags:
+      - '*'
 
 jobs:
   update-nuget-config:
