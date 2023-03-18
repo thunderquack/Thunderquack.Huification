@@ -25,4 +25,3 @@ jobs:
       uses: gittools/actions/gitversion/execute@v0
       with:
         useConfigFile: true
-        additionalArguments: '/showConfig'
