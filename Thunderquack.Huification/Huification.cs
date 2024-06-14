@@ -1,35 +1,35 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Text.RegularExpressions;
-using Thunderquack.Huification.Exceptions;
 
 namespace Thunderquack.Huification
 {
     public static class Huification
     {
+        /// <summary>
+        /// Huificate the last word
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns>Huificated word</returns>
         public static string Huificate(this string str)
         {
-            string lastWord = GetLastWord(str);
+            string lastWord = str.Split(' ').Last();
             Regex regex = new Regex(@"^[\p{IsCyrillic}]+$");
             bool containsCyrillic = regex.IsMatch(lastWord);
             if (!containsCyrillic)
             {
-                throw new NotCyrillicException();
+                return string.Empty;
             }
             return HuificateWord(lastWord);
         }
 
-        private static string GetLastWord(string st)
-        {
-            string[] words = st.Split(' ');
-            if (words.Length == 0)
-            {
-                throw new TooShortStringException();
-            }
-            return words[words.Length - 1];
-        }
-
         private static string HuificateWord(string word)
         {
+            if (string.IsNullOrWhiteSpace(word))
+            {
+                return string.Empty;
+            }
+
             char[] vowels = { 'у', 'е', 'ы', 'а', 'о', 'э', 'я', 'и', 'ю', 'ё' };
             Hashtable diff = new Hashtable
             {
@@ -96,7 +96,7 @@ namespace Thunderquack.Huification
             }
             else
             {
-                throw new NotEnughVowelsException();
+                return string.Empty;
             }
         }
     }
