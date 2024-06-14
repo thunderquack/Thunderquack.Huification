@@ -2,8 +2,6 @@ name: Nuget Component Publish
 
 on:
   push:
-    #branches:
-    #- master
     tags:
       - '*'
 
@@ -21,6 +19,7 @@ jobs:
       uses: gittools/actions/gitversion/setup@v0
       with:
         versionSpec: '5.x'
+
     - name: Determine Version
       uses: gittools/actions/gitversion/execute@v0
       with:
