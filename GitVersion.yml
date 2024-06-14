@@ -7,49 +7,28 @@ branches:
     tag: ''
     increment: Patch
     regex: master
-    sourceBranches:
-      - develop
-      - feature
-      - hotfix
-      - release
-    isMainline: true
 
   develop:
     tag: 'alpha'
     increment: Minor
     regex: develop
-    sourceBranches:
-      - feature
-      - master
-      - release
 
   feature:
     tag: ''
     increment: Inherit
     regex: feature[/-]
-    sourceBranches:
-      - develop
-      - release
 
   release:
     tag: 'beta'
     increment: Patch
     regex: release[/-]
-    sourceBranches:
-      - develop
-      - master
 
   hotfix:
     tag: 'hotfix'
     increment: Patch
     regex: hotfix[/-]
-    sourceBranches:
-      - master
-      - develop
 
 ignore:
   sha: []
-  before: null
-  tags: []
 
 merge-message-formats: {}
