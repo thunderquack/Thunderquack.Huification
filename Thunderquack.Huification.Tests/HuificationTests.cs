@@ -1,4 +1,3 @@
-using Thunderquack.Huification;
 namespace Thunderquack.Huification.Tests
 {
     public class Tests
@@ -26,7 +25,7 @@ namespace Thunderquack.Huification.Tests
         [Test]
         public void HuificationTest()
         {
-            Assert.That(simpleString.Huificate(), Is.EqualTo("’уюшать")); 
+            Assert.That(simpleString.Huificate(), Is.EqualTo("хуюшать")); 
         }
     }
 }

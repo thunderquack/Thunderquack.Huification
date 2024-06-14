@@ -96,7 +96,7 @@ namespace Thunderquack.Huification
             }
             else
             {
-                throw new NotEnughVowels();
+                throw new NotEnughVowelsException();
             }
         }
     }

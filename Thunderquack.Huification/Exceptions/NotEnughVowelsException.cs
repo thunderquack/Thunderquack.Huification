@@ -1,6 +1,6 @@
 ﻿namespace Thunderquack.Huification.Exceptions
 {
-    public class NotEnughVowels : HuificationException
+    public class NotEnughVowelsException : HuificationException
     {
     }
 }
