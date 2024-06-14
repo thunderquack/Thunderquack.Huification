@@ -13,7 +13,7 @@ namespace Thunderquack.Huification
         /// <returns>Huificated word</returns>
         public static string Huificate(this string str)
         {
-            string lastWord = str.Split(' ').Last();
+            string lastWord = str.Split(' ').Last().ToLower();
             Regex regex = new Regex(@"^[\p{IsCyrillic}]+$");
             bool containsCyrillic = regex.IsMatch(lastWord);
             if (!containsCyrillic)
@@ -45,7 +45,7 @@ namespace Thunderquack.Huification
             int startindex = 0;
             for (int i = 0; i < len; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < vowels.Length - 1; j++)
                 {
                     if (word[i] == vowels[j])
                     {

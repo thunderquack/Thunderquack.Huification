@@ -2,30 +2,14 @@ namespace Thunderquack.Huification.Tests
 {
     public class Tests
     {
-        string simpleString;
-
-        [SetUp]
-        public void Setup()
-        {
-            simpleString = "я хочу кушать";
-        }
-
-        [Test]
-        public void CyrillicTest()
-        {
-            Assert.Pass();
-        }
-
-        [Test]
-        public void SplitWordsTest()
-        {
-            Assert.Pass();
-        }
-        
+       
         [Test]
         public void HuificationTest()
         {
-            Assert.That(simpleString.Huificate(), Is.EqualTo("хуюшать")); 
+            string simpleString = "я хочу кушать";
+            Assert.That(simpleString.Huificate(), Is.EqualTo("хуюшать"));
+            simpleString = "ясно";
+            Assert.That(simpleString.Huificate(), Is.EqualTo("ху€сно"));
         }
     }
 }
