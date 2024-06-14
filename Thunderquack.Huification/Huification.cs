@@ -39,10 +39,12 @@ namespace Thunderquack.Huification
                 { 'э', 'е' },
                 { 'ы', 'и' }
             };
+
             int len = word.Length;
             int vowelscount = 0;
             bool start = true;
             int startindex = 0;
+
             for (int i = 0; i < len; i++)
             {
                 for (int j = 0; j < vowels.Length - 1; j++)
@@ -58,6 +60,7 @@ namespace Thunderquack.Huification
                     }
                 }
             }
+
             if (vowelscount > 1)
             {
                 if (vowelscount > 3)
@@ -83,6 +86,7 @@ namespace Thunderquack.Huification
                         }
                     }
                 }
+
                 string newword = word.Substring(startindex + 1);
                 if (diff.ContainsKey(word[startindex]))
                 {
@@ -92,6 +96,7 @@ namespace Thunderquack.Huification
                 {
                     newword = "ху" + word[startindex] + newword;
                 }
+
                 return newword;
             }
             else
