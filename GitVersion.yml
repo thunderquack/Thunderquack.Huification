@@ -1,11 +1,11 @@
-﻿mode: ContinuousDeployment
+﻿# GitVersion configuration file
+
+mode: ContinuousDeployment
 
 branches:
   master:
     tag: ''
     increment: Patch
-    preventIncrementOfMergedBranchVersion: false
-    trackMergeTarget: false
     regex: master
     sourceBranches:
       - develop
@@ -13,61 +13,39 @@ branches:
       - hotfix
       - release
     isMainline: true
-    tracksReleaseBranches: false
-    isReleaseBranch: false
 
   develop:
     tag: 'alpha'
     increment: Minor
-    preventIncrementOfMergedBranchVersion: false
-    trackMergeTarget: false
     regex: develop
     sourceBranches:
       - feature
       - master
       - release
-    isMainline: false
-    tracksReleaseBranches: false
-    isReleaseBranch: false
 
   feature:
     tag: ''
     increment: Inherit
-    preventIncrementOfMergedBranchVersion: true
-    trackMergeTarget: false
     regex: feature[/-]
     sourceBranches:
       - develop
       - release
-    isMainline: false
-    tracksReleaseBranches: false
-    isReleaseBranch: false
 
   release:
     tag: 'beta'
     increment: Patch
-    preventIncrementOfMergedBranchVersion: false
-    trackMergeTarget: false
     regex: release[/-]
     sourceBranches:
       - develop
       - master
-    isMainline: false
-    tracksReleaseBranches: true
-    isReleaseBranch: true
 
   hotfix:
     tag: 'hotfix'
     increment: Patch
-    preventIncrementOfMergedBranchVersion: false
-    trackMergeTarget: false
     regex: hotfix[/-]
     sourceBranches:
       - master
       - develop
-    isMainline: false
-    tracksReleaseBranches: false
-    isReleaseBranch: true
 
 ignore:
   sha: []
