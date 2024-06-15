@@ -42,6 +42,9 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --collect:"Code Coverage"
 
+    - name: List Coverage Files
+      run: ls -R ./Thunderquack.Huification.Tests/TestResults
+
     - name: Report Coverage
       uses: codecov/codecov-action@v2
       with:
