@@ -46,7 +46,7 @@ jobs:
       run: ls -R ./Thunderquack.Huification.Tests/TestResults
 
     - name: Report Coverage
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v4
       with:
         files: './Thunderquack.Huification.Tests/TestResults/**/*.xml'
         fail_ci_if_error: true
