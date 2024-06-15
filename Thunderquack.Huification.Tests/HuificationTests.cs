@@ -14,10 +14,10 @@ namespace Thunderquack.Huification.Tests
         [TestMethod]
         public void HuificationTest()
         {
-            string simpleString = "Я хочу кушать";
-            Assert.AreEqual("хуюшать", simpleString.Huificate());
-            simpleString = "Ясно";
-            Assert.AreEqual("хуясно", simpleString.Huificate());
+            string simpleString = "РЇ С…РѕС‡Сѓ РєСѓС€Р°С‚СЊ";
+            Assert.AreEqual("С…СѓСЋС€Р°С‚СЊ", simpleString.Huificate());
+            simpleString = "РЇСЃРЅРѕ";
+            Assert.AreEqual("С…СѓСЏСЃРЅРѕ", simpleString.Huificate());
         }
     }
 }
