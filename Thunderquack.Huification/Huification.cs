@@ -4,13 +4,16 @@ using System.Text.RegularExpressions;
 
 namespace Thunderquack.Huification
 {
+    /// <summary>
+    /// Main huification class.
+    /// </summary>
     public static class Huification
     {
         /// <summary>
-        /// Huificate the last word
+        /// Huificate the last word.
         /// </summary>
-        /// <param name="str"></param>
-        /// <returns>Huificated word</returns>
+        /// <param name="str">String to huificate.</param>
+        /// <returns>Huificated word or emty string if huification is not possible.</returns>
         public static string Huificate(this string str)
         {
             string lastWord = str.Split(' ').Last().ToLower();
@@ -20,6 +23,7 @@ namespace Thunderquack.Huification
             {
                 return string.Empty;
             }
+
             return HuificateWord(lastWord);
         }
 
@@ -37,7 +41,7 @@ namespace Thunderquack.Huification
                 { 'а', 'я' },
                 { 'о', 'ё' },
                 { 'э', 'е' },
-                { 'ы', 'и' }
+                { 'ы', 'и' },
             };
 
             int len = word.Length;
@@ -80,6 +84,7 @@ namespace Thunderquack.Huification
                                 }
                             }
                         }
+
                         if (idx == 3)
                         {
                             break;

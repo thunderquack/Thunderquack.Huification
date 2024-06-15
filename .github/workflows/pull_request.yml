@@ -1,11 +1,10 @@
-name: Nuget Component Publish
+name: Pull Request Check
 
 on:
-  push:
-    tags:
-      - '*'
-    branches:
-      - develop
+  pull_request:
+
+permissions:
+  pull-requests: write
 
 jobs:
   update-nuget-config:
@@ -52,10 +51,13 @@ jobs:
         thresholds: '70 90'
         fail_below_min: true
 
+    - name: Add Coverage PR Comment
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        recreate: true
+        path: code-coverage-results.md
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Pack
       run: dotnet pack --configuration Release --no-build --output ./nupkg /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
-
-    - name: Push to NuGet
-      env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-      run: dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json --symbol-source https://nuget.smbsrc.net

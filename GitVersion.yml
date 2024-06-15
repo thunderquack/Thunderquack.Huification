@@ -10,7 +10,7 @@ branches:
 
   develop:
     tag: 'alpha'
-    increment: Minor
+    increment: Patch
     regex: develop
 
   feature:

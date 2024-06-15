@@ -1,15 +1,39 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace Thunderquack.Huification.Tests
 {
-    public class Tests
+    /// <summary>
+    /// Tests for the huification.
+    /// </summary>
+    [TestClass]
+    public class HuificationTests
     {
-       
-        [Test]
+        /// <summary>
+        /// Basic test.
+        /// </summary>
+        [TestMethod]
         public void HuificationTest()
         {
-            string simpleString = "Я хочу кушать";
-            Assert.That(simpleString.Huificate(), Is.EqualTo("хуюшать"));
-            simpleString = "Ясно";
-            Assert.That(simpleString.Huificate(), Is.EqualTo("хуясно"));
+            string simpleString = "РЇ С…РѕС‡Сѓ РєСѓС€Р°С‚СЊ";
+            Assert.AreEqual("С…СѓСЋС€Р°С‚СЊ", simpleString.Huificate());
+            simpleString = "РЇСЃРЅРѕ";
+            Assert.AreEqual("С…СѓСЏСЃРЅРѕ", simpleString.Huificate());
+            simpleString = "РџР°СЂР°Р±РѕР»Р°";
+            Assert.AreEqual("С…СѓСЏР±РѕР»Р°", simpleString.Huificate());
+        }
+
+        /// <summary>
+        /// Empty strings test.
+        /// </summary>
+        [TestMethod]
+        public void EmptystringTest()
+        {
+            string simpleString = string.Empty;
+            Assert.AreEqual(string.Empty, simpleString.Huificate());
+            simpleString = "РљРѕР»";
+            Assert.AreEqual(string.Empty, simpleString.Huificate());
+            simpleString = "\n";
+            Assert.AreEqual(string.Empty, simpleString.Huificate());
         }
     }
 }
