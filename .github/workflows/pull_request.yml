@@ -3,6 +3,9 @@ name: Pull Request Check
 on:
   pull_request:
 
+permissions:
+  pull-requests: write
+
 jobs:
   update-nuget-config:
     runs-on: ubuntu-latest
@@ -50,10 +53,11 @@ jobs:
 
     - name: Add Coverage PR Comment
       uses: marocchino/sticky-pull-request-comment@v2
-      if: github.event_name == 'pull_request'
       with:
         recreate: true
         path: code-coverage-results.md
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Pack
       run: dotnet pack --configuration Release --no-build --output ./nupkg /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
