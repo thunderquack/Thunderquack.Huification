@@ -45,12 +45,13 @@ jobs:
     - name: List Coverage Files
       run: ls -R ./Thunderquack.Huification.Tests/TestResults
 
-    - name: Report Coverage
-      uses: codecov/codecov-action@v4
+    - name: Code Coverage Summary Report
+      uses: irongut/CodeCoverageSummary@v1.3.0
       with:
-        files: './Thunderquack.Huification.Tests/TestResults/**/*.xml'
-        fail_ci_if_error: true
-        verbose: true
+        filename: 'coverage/*/coverage.cobertura.xml'
+        badge: true
+        format: 'markdown'
+        output: 'both'
 
     - name: Pack
       run: dotnet pack --configuration Release --no-build --output ./nupkg /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
