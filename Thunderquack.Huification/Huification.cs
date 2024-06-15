@@ -13,7 +13,7 @@ namespace Thunderquack.Huification
         /// Huificate the last word.
         /// </summary>
         /// <param name="str">String to huificate.</param>
-        /// <returns>Huificated word</returns>
+        /// <returns>Huificated word or emty string if huification is not possible.</returns>
         public static string Huificate(this string str)
         {
             string lastWord = str.Split(' ').Last().ToLower();
