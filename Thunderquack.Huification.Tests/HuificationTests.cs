@@ -18,6 +18,22 @@ namespace Thunderquack.Huification.Tests
             Assert.AreEqual("хуюшать", simpleString.Huificate());
             simpleString = "Ясно";
             Assert.AreEqual("хуясно", simpleString.Huificate());
+            simpleString = "Парабола";
+            Assert.AreEqual("хуябола", simpleString.Huificate());
+        }
+
+        /// <summary>
+        /// Empty strings test.
+        /// </summary>
+        [TestMethod]
+        public void EmptystringTest()
+        {
+            string simpleString = string.Empty;
+            Assert.AreEqual(string.Empty, simpleString.Huificate());
+            simpleString = "Кол";
+            Assert.AreEqual(string.Empty, simpleString.Huificate());
+            simpleString = "\n";
+            Assert.AreEqual(string.Empty, simpleString.Huificate());
         }
     }
 }
