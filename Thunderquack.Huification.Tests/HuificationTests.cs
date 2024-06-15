@@ -1,8 +1,13 @@
 namespace Thunderquack.Huification.Tests
 {
-    public class Tests
+    /// <summary>
+    /// Tests for the huification.
+    /// </summary>
+    public class HuificationTests
     {
-       
+        /// <summary>
+        /// Basic test.
+        /// </summary>
         [Test]
         public void HuificationTest()
         {
