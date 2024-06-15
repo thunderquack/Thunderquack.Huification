@@ -1,20 +1,23 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace Thunderquack.Huification.Tests
 {
     /// <summary>
     /// Tests for the huification.
     /// </summary>
+    [TestClass]
     public class HuificationTests
     {
         /// <summary>
         /// Basic test.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void HuificationTest()
         {
             string simpleString = "я хочу кушать";
-            Assert.That(simpleString.Huificate(), Is.EqualTo("хуюшать"));
+            Assert.AreEqual("хуюшать", simpleString.Huificate());
             simpleString = "ясно";
-            Assert.That(simpleString.Huificate(), Is.EqualTo("ху€сно"));
+            Assert.AreEqual("ху€сно", simpleString.Huificate());
         }
     }
 }
