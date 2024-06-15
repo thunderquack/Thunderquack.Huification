@@ -40,7 +40,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --no-restore --collect:"Code Coverage"
+      run: dotnet test --no-restore --collect:"XPlat Code Coverage"
 
     - name: List Coverage Files
       run: ls -R ./Thunderquack.Huification.Tests/TestResults
@@ -48,7 +48,7 @@ jobs:
     - name: Report Coverage
       uses: codecov/codecov-action@v2
       with:
-        files: './Thunderquack.Huification.Tests/TestResults/**/*.coverage'
+        files: './Thunderquack.Huification.Tests/TestResults/**/*.xml'
         fail_ci_if_error: true
         verbose: true
 
