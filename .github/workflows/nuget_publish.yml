@@ -53,7 +53,7 @@ jobs:
         fail_below_min: true
 
     - name: Pack
-      run: dotnet pack --configuration Release --no-build --output ./nupkg /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
+      run: dotnet pack --configuration Release --no-build --output ./nupkg --project Thunderquack.Huification /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
 
     - name: Push to NuGet
       env:
