@@ -50,5 +50,12 @@ jobs:
         format: 'markdown'
         output: 'both'
 
+#    - name: Add Coverage PR Comment
+#      uses: marocchino/sticky-pull-request-comment@v2
+#      if: github.event_name == 'pull_request'
+#      with:
+#        recreate: true
+#        path: code-coverage-results.md
+
     - name: Pack
       run: dotnet pack --configuration Release --no-build --output ./nupkg /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
