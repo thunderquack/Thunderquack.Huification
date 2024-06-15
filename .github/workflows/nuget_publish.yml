@@ -40,7 +40,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --no-build --collect:"XPlat Code Coverage"
+      run: dotnet test --no-build
 
     - name: Report Coverage
       uses: codecov/codecov-action@v2
